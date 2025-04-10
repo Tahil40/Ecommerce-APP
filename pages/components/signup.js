@@ -1,40 +1,42 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/router";
 
 const Sign_up = () => {
-  const [name, set_name] = useState(); 
+  const [username, set_username] = useState();
   const [email, set_email] = useState();
-  const [password, set_password] = useState(); 
+  const [password, set_password] = useState();
+  const router = useRouter();
 
-  console.log(name, email, password);
-  const handle_change = (e)=>{
-    if(e.target.name == "name"){
-      set_name(e.target.value); 
+  const handle_change = (e) => {
+    if (e.target.name == "username") {
+      set_username(e.target.value);
+    } else if (e.target.name == "email") {
+      set_email(e.target.value);
+    } else if (e.target.name == "password") {
+      set_password(e.target.value);
     }
-    else if(e.target.name == "email"){
-      set_email(e.target.value); 
-    }
-    else if(e.target.name == "password"){
-      set_password(e.target.value); 
-    } 
-  }
+  };
 
-  const handle_submit = async (e)=>{
-    e.preventDefault(); 
-    const data = {name, email, password}
+  const handle_submit = async (e) => {
+    e.preventDefault();
+    const data = { username, email, password };
     let res = await fetch("http://localhost:3000/api/sign_up", {
-      method:"POST",
+      method: "POST",
       headers: {
-        "Content-Type":"application/json"
-      }, 
-      body: JSON.stringify(data)
-    }); 
-    let response = await res.json(); 
-    console.log(response); 
-
-    set_name(''); 
-    set_email('');
-    set_password(''); 
-  }
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    let response = await res.json();
+    if (response.success) {
+      set_username("");
+      set_email("");
+      set_password("");
+      router.push("/components/login");
+    } else {
+      //show toast here.....
+    }
+  };
 
   return (
     <>
@@ -46,13 +48,13 @@ const Sign_up = () => {
             alt="Your Company"
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Create Amazon Account 
+            Create Amazon Account
           </h2>
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" method="POST" onSubmit={handle_submit}>
-          <div>
+            <div>
               <label
                 htmlFor="email"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -62,9 +64,9 @@ const Sign_up = () => {
               <div className="mt-2">
                 <input
                   id="name"
-                  name="name"
+                  name="username"
                   type="name"
-                  value={name}
+                  value={username || ""}
                   autoComplete="email"
                   onChange={handle_change}
                   required
@@ -85,7 +87,7 @@ const Sign_up = () => {
                   id="email"
                   name="email"
                   type="email"
-                  value={email}
+                  value={email || ""}
                   autoComplete="email"
                   required
                   onChange={handle_change}
@@ -108,7 +110,7 @@ const Sign_up = () => {
                   id="password"
                   name="password"
                   type="password"
-                  value={password}
+                  value={password || ""}
                   autoComplete="current-password"
                   required
                   onChange={handle_change}
@@ -133,7 +135,7 @@ const Sign_up = () => {
                   type="password"
                   autoComplete="current-password"
                   required
-                  value={password}
+                  value={password || ""}
                   onChange={handle_change}
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-black sm:text-sm sm:leading-6 px-1"
                 />
@@ -144,8 +146,9 @@ const Sign_up = () => {
               <button
                 type="submit"
                 className="flex w-full justify-center border-2 rounded-md bg-black px-3 py-2 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-white hover:text-black hover:border-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-              onClick={handle_submit}>
-                Create Account 
+                onClick={handle_submit}
+              >
+                Create Account
               </button>
             </div>
           </form>

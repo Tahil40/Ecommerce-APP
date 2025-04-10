@@ -26,7 +26,6 @@ export default function App({ Component, pageProps }) {
         set_cart(JSON.parse(localStorage.getItem("cart")));
       }
     }catch(error){
-      console.log(error);
       localStorage.clear(); 
     }
     const token = localStorage.getItem('token');
@@ -34,12 +33,13 @@ export default function App({ Component, pageProps }) {
       set_user({value: token}); 
       set_key(Math.random());
     }
-  }, [])
+  }, []);
 
+  //create a function to save the user's cart......
   const save_cart = (cart_variable_params)=>{
-    localStorage.setItem("cart", cart_variable_params);
+    localStorage.setItem("cart", cart_variable_params);//saving cart to localstorage.... 
     let total_variable = 0; 
-    let keys_variable = Object.keys(cart); 
+    let keys_variable = Object.keys(cart);//getting keys from the cart.... 
     for (let i = 0; i < keys_variable.length; i++) {
      total_variable += cart_variable_params[keys_variable[i]].price * cart_variable_params[keys_variable[i]].quantity;
     }
@@ -47,16 +47,15 @@ export default function App({ Component, pageProps }) {
   }
        
   const add_to_cart = (item_code, quantity, price, name, size, variant)=>{
-    let cart_variable = cart; 
-    if(item_code in cart){
+    let cart_variable = cart;//assign cart object to cart_variable.... 
+    if(item_code in cart){//check if the cart have product with this item_code if yes then we just have to increase it's quantity because in cart no two same items save.... 
       cart_variable[item_code].quantity = cart[item_code].quantity + quantity
     } 
-    else{
+    else{ 
       cart_variable[item_code] = {quantity, price, name, size, variant}
     }
     set_cart(cart_variable);
     save_cart(cart_variable);
-    // console.log(cart_variable);
   }
   
   const clear_cart = ()=>{
@@ -93,8 +92,9 @@ export default function App({ Component, pageProps }) {
     save_cart(cart_variable);
     router.push('/checkout'); 
   }
-
+                 
   return <>
+      {/*Layout of the website....*/}
      <Navbar cart={cart} add_to_cart={add_to_cart} remove_from_cart={remove_from_cart} clear_cart={clear_cart} total={key} user={user}/>
      {/* Adding top loading bar......... */}
      <LoadingBar

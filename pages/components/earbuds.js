@@ -14,7 +14,7 @@ const Earbuds = ({product_props}) => {
               return(
                 <div className="lg:w-1/4 md:w-1/2 p-4 w-full hover:shadow-2xl hover:rounded-md">
                 <a className="block relative h-48 rounded overflow-hidden">
-                  <Link href={"http://localhost:3000/components/earbuds_info"}>
+                  <Link href={"http://localhost:3000/product/earbuds_info"}>
                     <img
                       alt="ecommerce"
                       className="object-cover object-center w-full h-full block cursor-pointer"
@@ -22,7 +22,7 @@ const Earbuds = ({product_props}) => {
                     />
                   </Link>
                 </a>
-                <Link href={"http://localhost:3000/components/earbuds_info"}>
+                <Link href={"http://localhost:3000/product/earbuds_info"}>
                   <div className="mt-4 cursor-pointer hover:underline">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                       {element.category}

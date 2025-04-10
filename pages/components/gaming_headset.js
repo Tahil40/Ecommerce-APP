@@ -14,7 +14,7 @@ const Gaming_headset = ({product_props}) => {
               return(
                 <div className="lg:w-1/4 md:w-1/2 p-4 w-full hover:shadow-2xl hover:rounded-md">
                 <a className="block relative h-48 rounded overflow-hidden">
-                  <Link href={"http://localhost:3000/components/gaming_headset_info"}>
+                  <Link href={"http://localhost:3000/product/gaming_headset_info"}>
                     <img
                       alt="ecommerce"
                       className="object-cover object-center w-full h-full block cursor-pointer"
@@ -22,7 +22,7 @@ const Gaming_headset = ({product_props}) => {
                     />
                   </Link>
                 </a>
-                <Link href={"http://localhost:3000/components/gaming_headset_info"}>
+                <Link href={"http://localhost:3000/product/gaming_headset_info"}>
                   <div className="mt-4 cursor-pointer hover:underline">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                       {element.category}
@@ -54,132 +54,6 @@ const Gaming_headset = ({product_props}) => {
               </div>
               );
             })}
-            {/* <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
-                </h2>
-                <p className="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
-                </h2>
-                <p className="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
-                </h2>
-                <p className="mt-1">$18.40</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The Catalyzer
-                </h2>
-                <p className="mt-1">$16.00</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
-                </h2>
-                <p className="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
-                </h2>
-                <p className="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_headset.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
-                </h2>
-                <p className="mt-1">$18.40</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

@@ -24,11 +24,9 @@ const Login = () => {
         "Content-Type":"application/json"
       }, 
       body: JSON.stringify(data)
-    })
+    });
     let response = await res.json(); 
-    console.log(response);
     if(response.success){
-      console.log("logged in");
       Router.push('http://localhost:3000');
       localStorage.setItem("token", response.token);
     }

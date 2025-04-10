@@ -14,7 +14,7 @@ const Gaming_mouse_keyboard = ({product_props}) => {
               return(
                 <div className="lg:w-1/4 md:w-1/2 p-4 w-full hover:shadow-2xl hover:rounded-md">
                 <a className="block relative h-48 rounded overflow-hidden">
-                  <Link href={"http://localhost:3000/components/gaming_mouse_keyboard_info"}>
+                  <Link href={"http://localhost:3000/product/gaming_mouse_keyboard_info"}>
                     <img
                       alt="ecommerce"
                       className="object-cover object-center w-full h-full block cursor-pointer"
@@ -22,7 +22,7 @@ const Gaming_mouse_keyboard = ({product_props}) => {
                     />
                   </Link>
                 </a>
-                <Link href={"http://localhost:3000/components/gaming_mouse_keyboard_info"}>
+                <Link href={"http://localhost:3000/product/gaming_mouse_keyboard_info"}>
                   <div className="mt-4 cursor-pointer hover:underline">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                       {element.category}
@@ -49,138 +49,11 @@ const Gaming_mouse_keyboard = ({product_props}) => {
                     <button className="border-2 border-black bg-white rounded-full w-6 h-6 focus:outline-none mt-1 mx-1.5"></button>
                     <button className="border-2 border-green-950 bg-green-900 rounded-full w-6 h-6 focus:outline-none mt-1 mx-1.5"></button>
                     <button className="border-2 border-blue-900 bg-blue-700 rounded-full w-6 h-6 focus:outline-none mt-1 mx-1.5"></button>
-
                   </div>
                 </Link>
               </div>
               );
             })}
-            {/* <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
-                </h2>
-                <p className="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
-                </h2>
-                <p className="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
-                </h2>
-                <p className="mt-1">$18.40</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The Catalyzer
-                </h2>
-                <p className="mt-1">$16.00</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
-                </h2>
-                <p className="mt-1">$21.15</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
-                </h2>
-                <p className="mt-1">$12.00</p>
-              </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-cover object-center w-full h-full block cursor-pointer"
-                  src="\gaming_mouse_keyboard.jpg"
-                />
-              </a>
-              <div className="mt-4 cursor-pointer hover:underline">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3>
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
-                </h2>
-                <p className="mt-1">$18.40</p>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

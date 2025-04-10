@@ -10,8 +10,8 @@ import { MdAccountCircle } from "react-icons/md";
 
 const Navbar = ({cart, add_to_cart, remove_from_cart, clear_cart, total, user}) => {
   const [dropdown, set_dropdown] = useState(false);
-  // console.log(cart, add_to_cart, remove_from_cart, clear_cart, total);
   const toggle_cart = () => {
+    // console.log(ref);
     if (ref.current.classList.contains("translate-x-full")) {
       ref.current.classList.remove("translate-x-full");
       ref.current.classList.add("translate-x-0");
@@ -22,6 +22,8 @@ const Navbar = ({cart, add_to_cart, remove_from_cart, clear_cart, total, user}) 
   };
 
   const ref = useRef();
+
+  // console.log(cart);
 
   return (
     <>
@@ -58,21 +60,25 @@ const Navbar = ({cart, add_to_cart, remove_from_cart, clear_cart, total, user}) 
           </Link>
         </ul>
 
-        <div className="cart absolute right-0 mx-5 top-4 cursor-pointer flex">
+        <div className="cart absolute right-0 mx-5 cursor-pointer flex">
           {/* Adding account icon.... */}
-          <Link href={"http://localhost:3000/components/login"}>
-            {user.value && <MdAccountCircle className="mx-4 text-3xl"/>}
-            {!user.value && <button className="mr-3 bg-black px-3 py-1 text-white font-thin rounded-md border-2 hover:bg-white hover:text-black hover:border-black">Login</button>}</Link>
-            <a onMouseOver={()=>{set_dropdown(true)}} onMouseLeave={()=>{set_dropdown(false)}}>
-              {dropdown && <div className="absolute right-5 bg-white my-10 mr-10 shadow-md py-2 px-4 text-black font-bold rounded-md">
+            {user.value && <MdAccountCircle className="mx-4 text-3xl" onMouseOver={()=>{set_dropdown(true)}} onMouseLeave={()=>{set_dropdown(false)}}/>}
+            
+            <Link href={"http://localhost:3000/components/login"}>
+            {!user.value && <button className="mr-3 bg-black px-3 py-1 text-white font-thin rounded-md border-2 hover:bg-white hover:text-black hover:border-black">Login</button>}
+            </Link>
+
+            {/* <a onMouseOver={()=>{set_dropdown(true)}} onMouseLeave={()=>{set_dropdown(false)}}> */}
+            {dropdown && <div className="absolute right-4 bg-white my-7 mr-10 shadow-md py-2 px-4 text-black font-bold rounded-md">
               <ul>  
                 <li className="hover:text-yellow-700 my-1">Orders</li>
                 <li className="hover:text-yellow-700 my-1">Account</li>
+                <li className="hover:text-yellow-700 my-1">SellOnline</li>
                 <li className="hover:text-yellow-700 my-1">Logout</li>
               </ul>
             </div>}
-            </a>
-
+            {/* </a> */}
+      
           {/* Adding cart icon.... */}
           <TiShoppingCart
             onClick={toggle_cart}
@@ -81,7 +87,7 @@ const Navbar = ({cart, add_to_cart, remove_from_cart, clear_cart, total, user}) 
         </div>
 
         <div
-          ref={ref}
+          ref={ref}//the DOM of this div is passed to the ref variable which is used to toggle the cart....
           className={`w-100 h-[100vh] sidecart overflow-y-scroll absolute top-0 right-0 bg-white shadow-2xl p-10 transform transition-transform translate-x-full ${Object.keys(cart).length!==0 ?'translate-x-0':'translate-x-full'}`}
         >
           <h1 className="font-bold text-2xl text-center">Shooping Cart</h1>
@@ -105,62 +111,12 @@ const Navbar = ({cart, add_to_cart, remove_from_cart, clear_cart, total, user}) 
               </div>
             </li>
             })}
-            {/* <li className="my-3">
-              <div className="flex">
-                <div className="w-1/2 px-2 items-center justify-center font-semibold mx-3">
-                  Gaming Accessories
-                </div>
-                <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-2 flex">
-                  <AiFillPlusCircle className="mx-2" /> 1{" "}
-                  <AiFillMinusCircle className="mx-2" />
-                </div>
-              </div>
-            </li>
-
-            <li className="my-3">
-              <div className="flex">
-                <div className="w-1/2 px-2 items-center justify-center font-semibold mx-3">
-                  Gaming Accessories
-                </div>
-                <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-4 flex">
-                  <AiFillPlusCircle className="mx-2" /> 2{" "}
-                  <AiFillMinusCircle className="mx-2" />
-                </div>
-                {/* <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-4"><AiFillMinusCircle /></div>*/}
-              {/* </div>
-            </li>
-
-            <li className="my-3">
-              <div className="flex">
-                <div className="w-1/2 px-2 items-center justify-center font-semibold mx-3">
-                  Gaming Accessories
-                </div>
-                <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-4 flex">
-                  <AiFillPlusCircle className="mx-2" /> 3{" "}
-                  <AiFillMinusCircle className="mx-2" />
-                </div>
-                {/* <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-4"><AiFillMinusCircle /></div> */}
-              {/* </div>
-            </li>
-
-            <li className="my-3">
-              <div className="flex">
-                <div className="w-1/2 px-2 items-center justify-center font-semibold mx-3">
-                  Gaming Accessories
-                </div>
-                <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-4 flex">
-                  <AiFillPlusCircle className="mx-2" /> 4{" "}
-                  <AiFillMinusCircle className="mx-2" />
-                </div>
-                {/* <div className="w-1/3 items-center justify-center font-semibold text-2xl mx-4"><AiFillMinusCircle /></div> */}
-              {/* </div> */}
-            {/* </li>   */}
           </ul>
           <div className="flex">
             <Link href={"http://localhost:3000/components/checkout"}><button
               className="flex mx-3 mt-16 text-white bg-black border-2 py-2 px-8 focus:outline-none hover:bg-white hover:text-black
                 hover:outline-4 rounded-3xl text-lg hover:border-black"
-            >                                                               
+            disabled={Object.keys(cart).length==0}>                                                               
               <IoBagCheckOutline className="m-1" />
               Checkout
             </button></Link>
@@ -168,7 +124,7 @@ const Navbar = ({cart, add_to_cart, remove_from_cart, clear_cart, total, user}) 
             <button
               className="flex mx-3 mt-16 text-white bg-black border-2 py-2 px-8 focus:outline-none hover:bg-white hover:text-black
                 hover:outline-4 rounded-3xl text-lg hover:border-black"
-            onClick={clear_cart}>
+            onClick={clear_cart} disabled={Object.keys(cart).length==0}>
               <IoBagCheckOutline className="m-1" />
               Clear cart
             </button>

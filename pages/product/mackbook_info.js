@@ -1,6 +1,4 @@
 import React,{useState} from "react";
-// import Navbar from "./navabr";
-// import Footer from "./footer";
 import Link from "next/link";
 import product from "@/models/product";
 import mongoose from "mongoose";
@@ -193,9 +191,6 @@ const Product_information = ({add_to_cart}) => {
               <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-800 mb-5">
                 <div className="flex">
                   <span className="mr-3">Color</span>
-                  {/* <button className="border-2 border-gray-800 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-800 ml-1 bg-gray-700 rounded-full w-6 h-6 focus:outline-none"></button>
-                  <button className="border-2 border-gray-800 ml-1 bg-indigo-500 rounded-full w-6 h-6 focus:outline-none"></button> */}
                   <button className="border-2 border-gray-950 bg-gray-700 rounded-full w-6 h-6 focus:outline-none mt-1"></button>
                   <button className="border-2 border-gray-700 bg-gray-700 rounded-full w-6 h-6 focus:outline-none mt-1 mx-2"></button>
                   <button className="border-2 border-yellow-200 bg-yellow-200 rounded-full w-6 h-6 focus:outline-none mt-1 mx-1.5"></button>
@@ -270,8 +265,6 @@ const Product_information = ({add_to_cart}) => {
       </section>
 
       <hr />  
-      {/* Adding footer....... */}
-      {/* <Footer/> */}
     </>
   );
 };
